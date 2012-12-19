@@ -278,9 +278,16 @@ footer {
 #copyright {
 	width: 960px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 #copyright a {
 	color: #fff;
 	text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
 	text-decoration: none;
+}
+#left {
+	float: left;
+}
+#right {
+	float: right;
 }
