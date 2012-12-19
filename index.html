@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>epub-cn 框架 —— 让中文阅读变得更美！</title>
+	<meta name="description" content="中文 epub 制作框架，让中文阅读变得更美！">
+	<meta name="keywords" content="epub, 中文epub制作，电子书制作，精美排版">
+	<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+	<style type="text/css">@import url("css/style.css");</style>
+	<link rel='stylesheet' href='css/template1.css' />
+	
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-34941641-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body>
+<div id="top"></div>
+<header>
+	<h1>epub-cn 框架</h1>
+	<h2>中文 epub 制作框架，让中文阅读变得更美</h2>
+	<a id="github" href="https://github.com/P233/epub-cn">查看源文件</a>
+	<a href="https://github.com/P233/epub-cn/archive/master.zip">下载框架</a>
+</header>
+
+<div id="wrap">
+	<div id="container">
+		<div id="intro" class="entry">
+			<nav id="labels">
+				<a id="label1" class="selected">关于框架</a>
+				<a id="label2">中文字体</a>
+				<a id="label3">更新日志</a>
+				<a id="label4">联系作者</a>
+			</nav>
+			
+			<div id="tab1" class="tabs">
+				<p><i>最近更新：已将所有文件上传至 Github，源文件地址 <a href="https://github.com/P233/epub-cn">https://github.com/P233/epub-cn</a>，欢迎意见交流！</i></p>
+				<p>epub-cn 框架是为了简化中文电子书排版过程所应运而生一套中文 epub 制作框架，包含 epub 基础文件结构以及常的用排版样式，通过 html 标签调用样式，以达到快速、规范排版的目的。<b>V1.1 版本开始增加了第二套模板供选择使用，只需将模板更名为 style.css 即可</b>。所有样式采用 em 单位布局，在 e-ink 设备中更改字体大小，各个部分会按比例缩放，保持协调统一的效果。</p>
+				<p>为了方便大家快速制作电子书，大部分样式已兼容 epubStar 的导出标准（并对 epubStar 导出的扉页、目录、以及版权页另做了兼容），不兼容的地方通过 “<span class="label">&Delta;</span>” 在下面的使用范例中标注，这些需要手动修改 html 文件。因 Calibre 导出标准的不规律性，只有标题及正文是兼容的，其他地方需要手动修改。</p>
+				<p>制作 epub 和使用 epub-cn 框架，都需要有一定的 html 和 css 基础，您可以在 <a href="http://www.w3school.com.cn/html/index.asp" target="_blank">中文 W3school</a> 了解这方面的知识；Markdown 文件编辑器可以快速编辑文本并导出为 html 格式，对制作 epub 有很大帮助，您可以通过 <a href="http://wowubuntu.com/markdown/" target="_blank">Markdown 语法说明</a> 了解编辑方法；修改 epub，推荐您使用 <a href="http://code.google.com/p/sigil/" target="_blank">Sigil</a>，这是一款所见即所得的 epub 制作软件，简单方便。</p>
+			</div>
+			
+			
+			<div id="tab2" class="tabs">
+				<p>国外的 e-ink 设备多不支持中文显示，也就是说无法阅读中文书籍，一种办法是 root 后安装中文字体，这种方法解决的比较彻底，但是略微复杂；另一种简单的办法是外挂老牛字体样式*（请查看：<a href="http://www.hi-pda.com/forum/redirect.php?goto=findpost&ptid=606293&pid=8088776" target="_blank">http://www.hi-pda.com/forum/redirect.php?goto=findpost&ptid=606293&pid=8088776</a>），阅读时勾选 “publisher default” 调用老牛字体样式中的字体。</p>
+				<p>epub-cn 框架支持老牛字体样式，所以无论您的设备采用第一种或者第二种解决办法，都可以正常阅读基于 epub-cn 框架制作的中文书籍。</p>
+				<!--<p>另外需要说明的是，中文粗体与斜体必须借助相应字库才可以在 e-ink 设备上显示，如果字库中没有粗体或斜体效果，仅凭 e-ink 设备是不能显示这些效果的。</p>-->
+				<p>* 老牛字体样式，版权所有：老牛。欢迎非商业性使用，但请注明"老牛字体样式"；商业使用请与老牛联系。</p>
+			</div>
+			
+			<div id="tab3" class="tabs">
+				<p><b>上传至 github</b><small>（2012年12月19日）</small></p>
+				<p>将所有文件上传至 <a href="https://github.com/P233/epub-cn">https://github.com/P233/epub-cn</a></p>
+				<hr>
+				<p><b>V1.1 版更新</b><small>（2012年9月30日）</small></p>
+				<ol>
+					<li>段落间距由 1.25em 改为 1em；</li>
+					<li>注释 &lt;p class="note"&gt; 改为 &lt;div class="notes"&gt; &lt;/div&gt; 所包裹的所有 &lt;p&gt; 标签自动作为注释项；</li>
+					<li>署名样式 &lt;p class="author"&gt;&lt;/p&gt; 改为 &lt;p class="signature"&gt;&lt;/p&gt;</li>
+					<li>居左图片或居右图片，宽度从 40% 增长为 47%；</li>
+					<li>简单调整了标题及副标题样式，去掉了 h3 和 h4 的第二种样式；</li>
+					<li>兼容 epubStar 导出标准，并对 epubStar 导出的扉页、目录、以及版权页另做了兼容；</li>
+					<li>修改了 Text 文件夹下的文件的结构，包含了使用范例；<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	cover.html —— 封面<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	titlepage.html —— 扉页<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	contents.html —— 目录<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	chapter0.html —— 序<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	chapter1.html —— 第一章<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;	chapter2.html —— 第二章<br />
+					</li>
+					<li>做了第二套模板，使用模板只需将模板更名为 style.css 即可。</li>
+				</ol>
+				<p>&nbsp;&nbsp;&nbsp;<i>特别感谢 k4user 和 larryli 两位前辈对新版本制作所给予的支持和帮助！</i></p>
+			</div>
+			
+			<div id="tab4" class="tabs">
+				<p>测试范围有限，还会有疏漏和不完善的地方，如果您在使用过程中遇到问题，请将 epub 文件及错误描述通过电子邮件发送到：<a href="mailto:40132147&#64;&#113;&#113;&#46;&#99;&#111;&#109;">40132147&#64;&#113;&#113;&#46;&#99;&#111;&#109;</a>。我是 Peter！，感谢支持！</p>
+				<p><i>最近更新：已将所有文件上传至 Github，源文件地址 <a href="https://github.com/P233/epub-cn">https://github.com/P233/epub-cn</a>，欢迎意见交流！</i></p>
+			</div>
+		</div>
+		
+		<nav id="templates">
+			<a id="template1" class="selected">综合样式<span>template1.css</span></a>
+			<a id="template2">小说样式<span>template2.css</span></a>
+		</nav>
+			
+		<div id="titlepage" class="entry">
+			<h3>titlepage.html</h3>
+			<div class="content">
+				<div class="code">
+					<h4>扉页样式</h4>
+					<p>&lt;h1&gt;<span class="text">书名或篇章标题</span>&lt;span&gt;<span class="text">副书名或篇章副标题</span>&lt;/span&gt;&lt;/h1&gt;</p>
+					<p>&lt;div id="<span class="keyword">details</span>"&gt;<br />
+					   &nbsp;&nbsp;&nbsp;&nbsp;	&lt;p&gt;<span class="text">作者：XXX</span>&lt;/p&gt;<br />
+					   &nbsp;&nbsp;&nbsp;&nbsp;	&lt;p&gt;<span class="text">制作：XXX</span>&lt;/p&gt;<br />
+					   &nbsp;&nbsp;&nbsp;&nbsp;	&lt;p&gt;<span class="text">基于 epub-cn 框架制作</span>&lt;/p&gt;<br />
+					   &lt;/div&gt;</p>
+					
+					<hr />
+					<p class="explanation">&bull; &lt;div id="details"&gt; 仅在 titlepage.html 页面中显示作者及制作信息</p>
+				</div>
+			</div>
+			<div class="eink">
+				<h1>书名或篇章标题<span>副书名或篇章副标题</span></h1>
+				<div id="details">
+					<p>作者：XXX</p>
+					<p>制作：XXX</p>
+					<p>基于 epub-cn 框架制作</p>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div id="contents" class="entry">
+			<h3>contents.html</h3>
+			<div class="content">
+				<div class="code">
+					<h4>目录样式</h4>
+					<p>&lt;h2&gt;<span class="text">目录</span>&lt;/h2&gt;</p>
+					<p>&lt;dt&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;	&lt;a href="<span class="keyword">chapter1.html</span>"&gt;<span class="text">第一章</span>&lt;/a&gt;<br />&lt;/dt&gt;</p>
+					<p>&lt;dd&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;	&lt;a href="<span class="keyword">chapter1.html#anchor1</span>"&gt;<span class="text">第一节</span>&lt;/a&gt;<br />&lt;/dd&gt;</p>
+					<p>&lt;p&gt;&lt;a name="<span class="keyword">anchor1</span>"&gt;&lt;/a&gt;&lt;/p&gt; <span class="label">&Delta;</span></p>
+					
+					<hr />
+					<p class="explanation">&bull; &lt;dt&gt; 主目录，&lt;dd&gt; 二级目录</p>
+					<p class="explanation">&bull; 可用定位锚定位到章节的某一位置，请将锚点 &lt;p&gt;&lt;a name="anchor1"&gt;&lt;/a&gt;&lt;/p&gt; 放于需要定位的标题的上一行</p>
+				</div>
+			</div>
+			<div class="eink">
+				<h2>目录</h2>
+				<dl>
+					<dt>序</dt>
+					
+					<dt>第一章</dt>
+						<dd>第一节</dd>
+						<dd>第二节</dd>
+						<dd>第三节</dd>
+					
+					<dt>第二章</dt>
+						
+					<dt>后记</dt>
+				</dl>
+			</div>
+		</div>
+		
+		
+		<div id="chapters" class="entry">
+			<h3>chapterX.html</h3>
+			<div class="content">				
+				<div class="code">
+					<h4>标题样式</h4>
+					<p>&lt;h2&gt;<span class="text">章节标题</span>&lt;span&gt;<span class="text">章节副标题</span>&lt;/span&gt;&lt;/h2&gt;</p>
+					<p>&lt;h3&gt;<span class="text">小章节标题</span>&lt;span&gt;<span class="text">小章节副标题</span>&lt;/span&gt;&lt;/h2&gt;</p>
+					<p>&lt;h4&gt;<span class="text">项目标题</span>&lt;span&gt;<span class="text">项目副标题</span>&lt;/span&gt;&lt;/h2&gt;</p>
+					<hr />
+					<p class="explanation">&bull; 只做了前 4 级的标题，&lt;h5&gt; 和 &lt;h6&gt; 因为太少用到，暂时不使用</p>
+					<p class="explanation">&bull; 副标题只需在标签中插入 &lt;span&gt; 标签，不兼容 epubStar 导出样式 <span class="label">&Delta;</span></p>
+				</div>
+				
+				
+				<div class="code">
+					<h4>段落样式</h4>
+					<p>&lt;p&gt;<span class="text">自动首行缩进2个字符</span>&lt;/p&gt;</p>
+					<p>&lt;p class="<span class="keyword">noindent</span>"&gt;<span class="text">无首行缩进</span>&lt;/p&gt; <span class="label">&Delta;</span></p>
+					<p>&lt;blockquote&gt;<span class="text">引用内容</span>&lt;/blockquote&gt;</p>
+					
+					<hr />
+					<p class="explanation">&bull; 所有文本内容自动左右对齐</p>
+					<p class="explanation">&bull; 如果源文件已经在段首空两个字符表示首行缩进，可以直接删除 template1.css 第 140 行，或 template2.css 第 157 行的 “text-indent: 2em;”</p>
+				</div>
+				
+				
+				<div class="code">
+					<h4>图文混排</h4>
+					<p>&lt;img src="" alt=""/&gt;</p>
+					<p>&lt;img class="<span class="keyword">left</span>" src="" alt=""/&gt;</p>
+					<p>&lt;img class="<span class="keyword">right</span>" src="" alt=""/&gt;</p>
+					
+					<hr />
+					<p class="explanation">&bull; 默认居中显示，90% 屏幕宽度，添加相对应的 class 可居左或居右，47% 屏幕宽度</p>
+					<p class="explanation">&bull; 如果将图片空放在 &lt;body&gt; 下，或者 &lt;p&gt; 的开头，会因为默认首行缩进造成偏移，因此最好将图片插入到文本中间</p>
+					<p class="explanation">（注：偏移的问题只在用电脑查看时出现，设备中还是正常显示的）</p>
+				</div>
+				
+				
+				<div class="code">
+					<h4>注释样式</h4>
+					<p>&lt;div class="<span class="keyword">notes</span>"&gt; &lt;/div&gt; <span class="label">&Delta;</span></p>
+					<p>&lt;a href="<span class="keyword">#note1</span>"&gt; <span class="text">[1]</span> &lt;/a&gt; <span class="label">&Delta;</span></p>
+					<p>&lt;p id="<span class="keyword">note1</span>" &gt; &lt;/p&gt; <span class="label">&Delta;</span></p>
+					
+					<hr />
+					<p class="explanation">&bull; &lt;div class="notes"&gt; &lt;/div&gt; 所包裹的所有 &lt;p&gt; 标签自动作为标签项，不能自动显示列表顺序，需要手动添加</p>
+					<p class="explanation">&bull; 给注释添加 id="note1"，配合 &lt;a href="#anchor1"&gt;&lt;/a&gt; 实现跳转到注释</p>
+				</div>
+				
+				
+				<div class="code">
+					<h4>其他样式</h4>
+					<p>&lt;p class="<span class="keyword">signature</span>"&gt;<span class="text">署名</span>&lt;/p&gt;</p>
+					<p>&lt;p class="<span class="keyword">date</span>"&gt;<span class="text">2012年9月18日</span>&lt;/p&gt;</p>
+					<p>&lt;hr /&gt;</p>
+					
+					<hr />
+					<p class="explanation">&bull; 署名样式采用新的 &lt;p class="signature"&gt;&lt;/p&gt;</p>
+				</div>
+			</div>
+			
+			<div class="eink">
+				<h2>章节标题<span>章节副标题</span></h2>
+				<h3>小章节标题</h3>
+				<p class="noindent">【无首行缩进】内容示例内容示例，内容示例内容示例内容示例，内容示例内容示例内容示例内容示例。内容示例，内容示例内容示例内容示例。内容示例内容示例，内容示例。内容示例内容示例内容示例。内容示例内容示例。内容示例，内容示例内容示例，内容示例内容示例内容示例内容示例内容示例内容示例。内容示例内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例。</p>
+				
+				<blockquote>内容示例内容示例，内容示例内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例。内容示例内容示例，内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例内容示例。<a href="#note1">[1]</a></blockquote>
+				
+				<p>【自动首行缩进两个字符，下同】内容示例内容示例，内容示例内容示例，内容示例内容示例。内容示例内容示例内容示例内容示例内容示例，内容示例内容示例。内容示例内容示例，内容示例内容示例内容示例内容示例内容示例内容示例，内容示例内容示例，内容示例内容示例，内容示例内容示例内容示例。内容示例内容示例，内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例内容示例。内容示例内容示例，内容示例内容示例内容示例。内容示例内容示例，内容示例内容示例。</p>
+				
+				<h3>小章节标题<span>小章节副标题</span></h3>
+				<h4>项目标题</h4>
+				<p>内容示例内容示例内容示例，内容示例内容示例。内容示例内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例，内容示例内容示例内容示例内容示例，内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例。内容示例内容示例，内容示例内容示例。内容示例内容示例，内容示例内容示例内容示例内容示例内容示例内容示例内容示例。<a href="#note2">[2]</a></p>
+				
+				<h4>项目标题</h4>
+				<p>内容示例内容示例，内容示例内容示例内容示例。内容示例内容示例内容示例内容示例内容示例内容示例，<img src="img/img.png" alt="img"/>内容示例内容示例内容示例内容示例内容示例。内容示例内容示例，内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例内容示例。<a href="#note3">[3]</a></p>
+				
+				<p>内容示例内容示例，内容示例内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例。内容示例内容示例，<img class="left" src="img/img.png" alt="img"/>内容示例内容示例内容示例内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例，内容示例内容示例内容示例。内容示例内容示例，内容示例内容示例。</p>
+				
+				<h4>项目标题<span>项目副标题</span></h4>
+				<p>内容示例内容示例，内容示例内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例。内容示例内容示例，内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例内容示例。内容示例内容示例，内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例内容示例。<img class="right" src="img/img.png" alt="img"/>内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例内容示例。内容示例内容示例。</p>
+				
+				<p>内容示例内容示例内容示例，内容示例内容示例。内容示例内容示例内容示例内容示例，内容示例内容示例内容示例内容示例内容示例，内容示例内容示例内容示例内容示例，内容示例内容示例。内容示例内容示例内容示例，内容示例内容示例。内容示例内容示例，内容示例内容示例。内容示例内容示例，内容示例内容示例内容示例内容示例内容示例内容示例内容示例。</p>
+				
+				<p class="signature">署名</p>
+				
+				<p class="date">2012年9月19日</p>
+				
+				<hr />
+				
+				<div class="notes">
+					<p id="note1">1. 注释内容</p>
+					<p id="note2">2. 注释内容</p>
+					<p id="note3">3. 注释内容</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="license" class="entry">
+			<p>epub-cn 框架采用 "<a href="http://creativecommons.org/licenses/by/3.0/deed.zh" target="_blank">知识共享署名 3.0 Unported 许可协议</a>" 进行许可，您可以复制，修改，分享，以及用于商业用途，但请注明出自 http://www.epub-cn.tk 网站。<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.zh" target="_blank"><img alt="知识共享许可协议" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a></p>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div id="copyright">
+		<a href="mailto:40132147&#64;&#113;&#113;&#46;&#99;&#111;&#109;">Copyright &copy; 2012 Peter!</a>
+	</div>
+</footer>
+
+<!--[if lt IE 7]> <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'> <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0027_Simplified Chinese.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div> <![endif]-->
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var clickHandler = function(k) {
+			return function() {
+				$("#labels a").removeClass("selected");
+				$(this).addClass("selected");
+				$(".tabs").hide();
+				$("#tab" + k).fadeIn(400);
+			};
+		};
+		for (var i=1; i<5; ++i) {
+			$('#label' + i).click(clickHandler(i));
+		};
+		
+		$("#template1").click(function(){
+		    $("link").attr("href", "css/template1.css");
+		    return false;
+		});
+		
+		$("#template2").click(function(){
+		    $("link").attr("href", "css/template2.css");
+		    return false;
+		});
+		
+		$("#templates a").click(function(){
+			$("#templates a").removeClass("selected");
+			$(this).addClass("selected");
+		});
+	});
+</script>
+</body>
+</html>
